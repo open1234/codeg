@@ -13,4 +13,5 @@ public abstract class BaseGenerator {
 	 */
 	public abstract void create() throws Exception;
 
+	
 }

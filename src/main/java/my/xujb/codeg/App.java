@@ -33,14 +33,24 @@ public class App {
 				}
 			}
 
-			// 循环生成代码
-			for (BaseGenerator generator : generators) {
-				generator.create();
-			}
+			// 生成代码
+			doGenerator(generators);
 			System.out.println("程序结束");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("系统出错!错误信息:" + e.getMessage());
+		}
+	}
+
+	/**
+	 * 循环生成代码
+	 * 
+	 * @param generators
+	 * @throws Exception
+	 */
+	private static void doGenerator(Set<BaseGenerator> generators) throws Exception {
+		for (BaseGenerator generator : generators) {
+			generator.create();
 		}
 	}
 
